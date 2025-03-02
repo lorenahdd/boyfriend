@@ -22,8 +22,8 @@ input {
 
 #flip_book {
     position: relative;
-    width: 298px;
-    height: 420px;
+    width: 338px;
+    height: 473px;
     transition-duration: 1s;
     perspective: 2000px;
 }
@@ -34,13 +34,13 @@ input {
     align-items: center;
     width: 100%;
     height: 100%;
-    border-radius: 2.5px 5px 5px 2.5px;
+    border-radius: 3px 6px 6px 3px;
     background-image: url(./images/flip_book_edge_shading.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(220, 20, 60);
-    box-shadow: 0 0 5px 0 rgb(25, 25, 25, 0.25);
+    background-color: rgb(79, 93, 219);
+    box-shadow: 0 0 5px 0 rgba(25, 25, 25, 0.25);
 }
 
 .front_cover {
@@ -60,11 +60,11 @@ input {
 
 .page {
     position: absolute;
-    top: 10px;
-    left: 1px;
-    width: 288px;
-    height: 400px;
-    border-radius: 0 5px 5px 0;
+    top: 11px;
+    left: 2px;
+    width: 325px;
+    height: 455px;
+    border-radius: 0 6px 6px 0;
     background-color: white;
     transform-origin: left;
     transform-style: preserve-3d;
@@ -106,17 +106,17 @@ input {
 
 .edge_shading {
     position: absolute;
-    width: 288px;
-    height: 400px;
+    width: 325px;
+    height: 455px;
     z-index: 98;
 }
 
 .front_content {
     position: absolute;
     top: 1px;
-    width: 287px;
-    height: 398px;
-    border-radius: 0 5px 5px 0;
+    width: 323px;
+    height: 453px;
+    border-radius: 0 6px 6px 0;
     z-index: 97;
 }
 
@@ -124,20 +124,41 @@ input {
     position: absolute;
     top: 1px;
     left: 1px;
-    width: 287px;
-    height: 398px;
-    border-radius: 5px 0 0 5px;
+    width: 323px;
+    height: 453px;
+    border-radius: 6px 0 0 6px;
     z-index: 97;
 }
 
+
+
 .back_cover {
-    position: relative;
+    position: absolute;
+    width: 338px;  /* Ajustado para o novo tamanho */
+    height: 473px; /* Ajustado para o novo tamanho */
     z-index: -1;
 }
 
+.back_cover img {
+    position: absolute;
+    top: 12px;
+    left: 1px;
+    width: 323px;
+    height: 453px;
+}
+
+
+
+
+/* Ajustes de transição e camadas */
 #page1 {
     z-index: 8;
 }
+
+#back_cover{
+    z-index: -2;
+}
+
 
 #page2 {
     z-index: 5;
@@ -155,43 +176,44 @@ input {
     z-index: 2;
 }
 
-#cover_checkbox:checked~#flip_book {
-    transform: translateX(144px)
+#cover_checkbox:checked ~ #flip_book {
+    transform: translateX(161px);
 }
 
-#cover_checkbox:checked~#flip_book .front_cover {
+#cover_checkbox:checked ~ #flip_book .front_cover {
     transform: rotateY(-180deg);
     transition: transform 1.5s, z-index 0.5s 0.5s;
     z-index: 1;
 }
 
-#cover_checkbox:checked~#flip_book #cover {
+#cover_checkbox:checked ~ #flip_book #cover {
     position: absolute;
     width: 80%;
     height: 80%;
 }
 
-#page1_checkbox:checked~#flip_book #page1 {
+#page1_checkbox:checked ~ #flip_book #page1 {
     transform: rotateY(-180deg);
     z-index: 2;
 }
 
-#page2_checkbox:checked~#flip_book #page2 {
+#page2_checkbox:checked ~ #flip_book #page2 {
     transform: rotateY(-180deg);
     z-index: 3;
 }
 
-#page3_checkbox:checked~#flip_book #page3 {
+#page3_checkbox:checked ~ #flip_book #page3 {
     transform: rotateY(-180deg);
     z-index: 4;
 }
 
-#page4_checkbox:checked~#flip_book #page4 {
+#page4_checkbox:checked ~ #flip_book #page4 {
     transform: rotateY(-180deg);
     z-index: 5;
 }
 
-#page5_checkbox:checked~#flip_book #page5 {
+#page5_checkbox:checked ~ #flip_book #page5 {
     transform: rotateY(-180deg);
     z-index: 6;
 }
+
